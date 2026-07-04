@@ -8,6 +8,6 @@ import { asyncHandler } from "../middleware/asyncHandler.js";
 const router = express.Router();
 
 
-router.post("/", validateFeedbackSubmission, asyncHandler(submitFeedback));
+router.post("/submit", validateFeedbackSubmission, asyncHandler(submitFeedback));
 
 export default router;

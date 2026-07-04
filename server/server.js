@@ -6,13 +6,15 @@ import { connectDB, getDBStatus } from "./src/config/db.js";
 import feedbackRoutes from "./src/routes/feedback.routes.js";
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 
+const corsOptions = {
+  origin: process.env.CLIENT_ORIGIN || "*",
+  withCredentials: true,
+};
 // Middleware
 app.use(
-  cors({
-    origin: process.env.CLIENT_ORIGIN || "*",
-  })
+  cors(corsOptions)
 );
 app.use(helmet());
 app.use(express.json());
