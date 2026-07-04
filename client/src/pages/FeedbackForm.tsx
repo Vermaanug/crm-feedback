@@ -95,7 +95,7 @@ export default function FeedbackForm() {
           shadow="sm"
           className="flex flex-col items-center text-center"
         >
-          <div className="flex h-14 w-14 items-center justify-center rounded-full bg-emerald-50 ring-8 ring-emerald-50/60">
+          <div className="flex h-14 w-full items-center justify-center rounded-full">
             <CheckCircle2 className="h-7 w-7 text-emerald-600" strokeWidth={2.2} />
           </div>
           <Title order={2} mt="md">

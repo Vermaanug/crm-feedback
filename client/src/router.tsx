@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 
 import MainLayout from "./layout/MainLayout";
 import FeedbackForm from "./pages/FeedbackForm";
+import AdminDashboard from "./pages/AdminDashboard";
 
 export const router = createBrowserRouter([
   {
@@ -12,6 +13,11 @@ export const router = createBrowserRouter([
         index: true,
         element: <FeedbackForm />,
       },
+      {
+        path: "admin",
+        element: <AdminDashboard />,
+      },
     ],
   },
 ]);
+     
