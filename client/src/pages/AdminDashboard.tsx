@@ -195,7 +195,7 @@ export default function AdminDashboard() {
                     cx="50%"
                     cy="50%"
                     outerRadius={80}
-                    label={({ category: cat, count }) => `${cat}: ${count}`}
+                  
                   >
                     {summary.categoryBreakdown.map((_, i) => (
                       <Cell key={i} fill={COLORS[i % COLORS.length]} />
