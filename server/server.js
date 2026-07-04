@@ -4,6 +4,7 @@ import helmet from "helmet";
 import "dotenv/config";
 import { connectDB, getDBStatus } from "./src/config/db.js";
 import feedbackRoutes from "./src/routes/feedback.routes.js";
+import { errorHandler, notFound } from "./src/middleware/errorHandler.js";
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -20,6 +21,9 @@ app.use(helmet());
 app.use(express.json());
 
 app.use("/api/feedback", feedbackRoutes);
+
+app.use(notFound);
+app.use(errorHandler);
 
 async function start() {
   await connectDB();
