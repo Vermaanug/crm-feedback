@@ -3,6 +3,7 @@ import cors from "cors";
 import helmet from "helmet";
 import "dotenv/config";
 import { connectDB, getDBStatus } from "./src/config/db.js";
+import feedbackRoutes from "./src/routes/feedback.routes.js";
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -16,7 +17,7 @@ app.use(
 app.use(helmet());
 app.use(express.json());
 
-
+app.use("/api/feedback", feedbackRoutes);
 
 async function start() {
   await connectDB();
